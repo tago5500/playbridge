@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>PlayBridge — seus jogos e vídeos do PC na TV</title>
-<meta name="description" content="Jogue os jogos do seu computador na Fire TV com o controle e veja seus vídeos, sem atrapalhar quem está usando o PC. Baixe grátis para Windows.">
+<meta name="description" content="Jogue os jogos do seu computador na TV com o controle e veja seus vídeos, sem atrapalhar quem está usando o PC. Baixe grátis para Windows.">
 <link rel="icon" href="imagens/simbolo.png">
 <style>
   :root {
@@ -45,6 +45,11 @@
   .cartao p { margin: 0; color: var(--texto-2); }
   .icone { font-size: 1.8rem; }
 
+  .aparelhos { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+  .selo { display: inline-block; font-size: .78rem; font-weight: 700; padding: 3px 10px; border-radius: 99px; }
+  .selo.ok { background: #12351f; color: #6ee7a0; }
+  .selo.teste { background: #3a2c0c; color: #fbbf24; }
+  .selo.nao { background: #2a2f3d; color: #b7bdcc; }
   .passos { counter-reset: passo; display: grid; gap: 18px; }
   .passo { display: grid; grid-template-columns: 56px 1fr; gap: 18px; background: var(--painel); border: 1px solid var(--borda); border-radius: 16px; padding: 22px 24px; }
   .passo::before { counter-increment: passo; content: counter(passo); display: grid; place-items: center; width: 48px; height: 48px; border-radius: 50%;
@@ -66,10 +71,11 @@
   footer { border-top: 1px solid var(--borda); padding: 28px 0 40px; color: var(--texto-2); font-size: .9rem; }
   footer .faixa { display: flex; flex-wrap: wrap; gap: 12px 28px; justify-content: space-between; }
 
+  @media (max-width: 1060px) { .aparelhos { grid-template-columns: repeat(2, 1fr); } }
   @media (max-width: 860px) {
     .topo { padding-top: 40px; }
     .topo .faixa { grid-template-columns: 1fr; }
-    .vantagens, .precisa { grid-template-columns: 1fr; }
+    .vantagens, .precisa, .aparelhos { grid-template-columns: 1fr; }
     header nav { display: none; }
     .faixa { padding: 0 16px; }
     .passo { grid-template-columns: 1fr; }
@@ -80,7 +86,7 @@
 <header>
   <div class="faixa">
     <a href="#"><img src="imagens/logo.png" alt="PlayBridge"></a>
-    <nav><a href="#como">Como funciona</a><a href="#precisa">O que precisa</a><a href="#perguntas">Perguntas</a></nav>
+    <nav><a href="#como">Como funciona</a><a href="#aparelhos">Aparelhos</a><a href="#precisa">O que precisa</a><a href="#perguntas">Perguntas</a></nav>
   </div>
 </header>
 
@@ -89,7 +95,7 @@
     <div class="faixa">
       <div>
         <h1>Os jogos e vídeos do seu computador <span>na TV</span></h1>
-        <p class="subtitulo">Jogue na Fire TV com o controle, do sofá, enquanto outra pessoa continua usando o computador normalmente. E assista aos seus filmes e séries do PC na tela grande.</p>
+        <p class="subtitulo">Jogue na TV com o controle, do sofá, enquanto outra pessoa continua usando o computador normalmente. E assista aos seus filmes e séries do PC na tela grande.</p>
         <a class="baixar" href="https://github.com/tago5500/playbridge/releases/latest/download/PlayBridge-Instalador.exe">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0-5-5m5 5 5-5M4 19h16"/></svg>
           Baixar para Windows
@@ -125,12 +131,25 @@
         </div></div>
         <div class="passo"><div>
           <h3>Coloque o app na TV</h3>
-          <p>No fim da instalação, o computador abre um passo a passo. Na Fire TV, você instala o app grátis <b>Downloader</b>, digita o endereço que aparece no computador e pronto: o PlayBridge vai para a TV.</p>
+          <p>No fim da instalação, o computador abre um passo a passo para o seu tipo de TV. Na TV, você instala o app grátis <b>Downloader</b>, digita o endereço que aparece no computador e pronto: o PlayBridge vai para a TV.</p>
         </div></div>
         <div class="passo"><div>
           <h3>Ligue o controle e jogue</h3>
-          <p>Conecte o controle de videogame na Fire TV pelo Bluetooth, escolha um jogo e aperte OK. Para ver os vídeos, coloque os arquivos na pasta <b>Vídeos › PlayBridge</b> do computador.</p>
+          <p>Conecte o controle de videogame na TV pelo Bluetooth, escolha um jogo e aperte OK. Para ver os vídeos, coloque os arquivos na pasta <b>Vídeos › PlayBridge</b> do computador.</p>
         </div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="aparelhos">
+    <div class="faixa">
+      <h2>Em quais TVs funciona</h2>
+      <p class="explica">O app da TV do PlayBridge roda nos aparelhos com Android por dentro. Veja como está cada um hoje:</p>
+      <div class="aparelhos">
+        <div class="cartao"><span class="selo ok">Testado</span><h3>Fire TV</h3><p>Fire TV Stick 4K. Os outros modelos (Stick, Stick Lite, 4K Max, Cube) usam o mesmo sistema.</p></div>
+        <div class="cartao"><span class="selo teste">Compatível · em teste</span><h3>Google TV</h3><p>Chromecast com Google TV e TVs com Google TV.</p></div>
+        <div class="cartao"><span class="selo teste">Compatível · em teste</span><h3>Android TV e TV box</h3><p>TVs Sony, TCL, Philips, Xiaomi e outras com Android TV; TV box Android como a Mi Box.</p></div>
+        <div class="cartao"><span class="selo nao">Ainda não</span><h3>Samsung, LG, Roku e Apple TV</h3><p>Usam outros sistemas e precisam de um app próprio. Por enquanto, ligue uma Fire TV ou um Chromecast na TV.</p></div>
       </div>
     </div>
   </section>
@@ -141,7 +160,7 @@
       <p class="explica">Para os vídeos, qualquer computador com Windows serve. Para os jogos, o computador precisa de uma placa de vídeo.</p>
       <ul class="precisa">
         <li><span><b>Computador com Windows 10 ou 11</b> (64 bits)</span></li>
-        <li><span><b>Fire TV</b> (Fire TV Stick ou Fire TV Cube)</span></li>
+        <li><span><b>Uma TV com Android por dentro</b>: Fire TV, Google TV, Android TV ou TV box Android (veja a lista acima)</span></li>
         <li><span><b>TV e computador na mesma internet de casa</b></span></li>
         <li><span><b>Controle de Xbox ou PlayStation</b> com Bluetooth, para os jogos</span></li>
         <li><span><b>Placa de vídeo para jogar</b>: NVIDIA GTX 900 ou mais nova, AMD RX 400 ou mais nova, ou Intel de 6ª geração em diante</span></li>
