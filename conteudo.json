@@ -1,0 +1,84 @@
+{
+  "pagina": {
+    "titulo": "PlayBridge — seus jogos e vídeos do PC na TV",
+    "descricao": "Jogue os jogos do seu computador na TV com o controle e veja seus vídeos, sem atrapalhar quem está usando o PC. Baixe grátis para Windows."
+  },
+  "cores": { "destaque": "#f59e0b", "fundo": "#0a0f1c", "cartao": "#141b2d" },
+  "logo": "imagens/logo.png",
+  "linkBaixar": "https://github.com/tago5500/playbridge/releases/latest/download/PlayBridge-Instalador.exe",
+  "topo": {
+    "titulo": "Os jogos e vídeos do seu computador",
+    "tituloDestaque": "na TV",
+    "subtitulo": "Jogue na TV com o controle, do sofá, enquanto outra pessoa continua usando o computador normalmente. E assista aos seus filmes e séries do PC na tela grande.",
+    "botao": "Baixar para Windows",
+    "detalhe": "Windows 10 e 11 · 111 MB · instalação em poucos minutos",
+    "foto": "imagens/tv-inicio.jpg",
+    "posicaoFoto": "direita",
+    "posicaoBotao": "esquerda",
+    "molduraTv": true
+  },
+  "vantagens": {
+    "mostrar": true,
+    "itens": [
+      { "icone": "🎮", "titulo": "Seus jogos na TV", "texto": "Steam, Epic, EA, Ubisoft e Xbox: o jogo roda no computador e aparece na TV, com o controle de Xbox ou PlayStation." },
+      { "icone": "🖥️", "titulo": "O PC continua livre", "texto": "O jogo abre numa tela invisível. Quem está no computador não vê nada mudar e segue trabalhando." },
+      { "icone": "🎬", "titulo": "Seus vídeos, do seu jeito", "texto": "Filmes, séries e vídeos do computador organizados como num app de streaming, com \"continuar assistindo\"." }
+    ]
+  },
+  "como": {
+    "mostrar": true,
+    "menu": "Como funciona",
+    "titulo": "Como funciona",
+    "explica": "São três passos, uma vez só. Você não precisa de técnico nem de cabo: o próprio PlayBridge vai mostrando o que fazer.",
+    "passos": [
+      { "titulo": "Baixe e instale no computador", "texto": "Clique em **Baixar para Windows**, abra o arquivo baixado, aceite os termos de uso e clique em **Instalar**. O resto é sozinho.", "dica": "Se aparecer \"O Windows protegeu o computador\", clique em **Mais informações** e depois em **Executar assim mesmo**." },
+      { "titulo": "Coloque o app na TV", "texto": "No fim da instalação, o computador abre um passo a passo para o seu tipo de TV. Na TV, você instala o app grátis **Downloader**, digita o endereço que aparece no computador e pronto: o PlayBridge vai para a TV.", "dica": "" },
+      { "titulo": "Ligue o controle e jogue", "texto": "Conecte o controle de videogame na TV pelo Bluetooth, escolha um jogo e aperte OK. Para ver os vídeos, coloque os arquivos na pasta **Vídeos › PlayBridge** do computador.", "dica": "" }
+    ]
+  },
+  "aparelhos": {
+    "mostrar": true,
+    "menu": "Aparelhos",
+    "titulo": "Em quais TVs funciona",
+    "explica": "O app da TV do PlayBridge roda nos aparelhos com Android por dentro. Veja como está cada um hoje:",
+    "itens": [
+      { "selo": "ok", "seloTexto": "Testado", "titulo": "Fire TV", "texto": "Fire TV Stick 4K. Os outros modelos (Stick, Stick Lite, 4K Max, Cube) usam o mesmo sistema." },
+      { "selo": "teste", "seloTexto": "Compatível · em teste", "titulo": "Google TV", "texto": "Chromecast com Google TV e TVs com Google TV." },
+      { "selo": "teste", "seloTexto": "Compatível · em teste", "titulo": "Android TV e TV box", "texto": "TVs Sony, TCL, Philips, Xiaomi e outras com Android TV; TV box Android como a Mi Box." },
+      { "selo": "nao", "seloTexto": "Ainda não", "titulo": "Samsung, LG, Roku e Apple TV", "texto": "Usam outros sistemas e precisam de um app próprio. Por enquanto, ligue uma Fire TV ou um Chromecast na TV." }
+    ]
+  },
+  "precisa": {
+    "mostrar": true,
+    "menu": "O que precisa",
+    "titulo": "O que você precisa",
+    "explica": "Para os vídeos, qualquer computador com Windows serve. Para os jogos, o computador precisa de uma placa de vídeo.",
+    "itens": [
+      "**Computador com Windows 10 ou 11** (64 bits)",
+      "**Uma TV com Android por dentro**: Fire TV, Google TV, Android TV ou TV box Android (veja a lista acima)",
+      "**TV e computador na mesma internet de casa**",
+      "**Controle de Xbox ou PlayStation** com Bluetooth, para os jogos",
+      "**Placa de vídeo para jogar**: NVIDIA GTX 900 ou mais nova, AMD RX 400 ou mais nova, ou Intel de 6ª geração em diante",
+      "**Cabo de rede no computador** (opcional): assim a TV consegue ligar o computador"
+    ]
+  },
+  "perguntas": {
+    "mostrar": true,
+    "menu": "Perguntas",
+    "titulo": "Perguntas",
+    "itens": [
+      { "pergunta": "Quem está usando o computador vê o jogo?", "resposta": "Não. O jogo abre numa tela invisível, só para a TV. O monitor do computador continua do jeito que estava." },
+      { "pergunta": "O computador precisa ficar ligado?", "resposta": "Sim, os jogos e vídeos estão nele. Se ele estiver no cabo de rede, a própria TV pode ligá-lo: é só apertar \"Ligar o computador\" no PlayBridge." },
+      { "pergunta": "O PlayBridge baixa filmes ou jogos?", "resposta": "Não. Ele mostra na TV o que você já tem no computador: os jogos das suas lojas (Steam, Epic, EA, Ubisoft, Xbox) e os seus vídeos." },
+      { "pergunta": "Meus vídeos vão para a internet?", "resposta": "Não. Tudo fica na sua casa: o computador manda os vídeos e os jogos para a TV pela rede de casa." },
+      { "pergunta": "Como desinstalar?", "resposta": "Como qualquer programa: Configurações do Windows › Aplicativos › PlayBridge › Desinstalar. Seus vídeos não são apagados." }
+    ]
+  },
+  "final": {
+    "mostrar": true,
+    "titulo": "Pronto para jogar no sofá?",
+    "texto": "Baixe agora e siga o passo a passo que o PlayBridge mostra.",
+    "botao": "Baixar para Windows"
+  },
+  "rodape": "© 2026 PlayBridge"
+}
