@@ -44,7 +44,7 @@
     h += '<div class="topo' + (t.posicaoBotao === 'centro' ? ' botao-centro' : '') + '"><div class="' + classeFaixa + '"><div class="chamada">' +
       '<h1>' + esc(t.titulo) + (t.tituloDestaque ? ' <span>' + esc(t.tituloDestaque) + '</span>' : '') + '</h1>' +
       '<p class="subtitulo">' + fmt(t.subtitulo) + '</p>' + botao(c, t.botao) +
-      (t.detalhe ? '<p class="detalhe">' + esc(t.detalhe) + '</p>' : '') + '</div>' + foto + '</div></div>';
+      (t.detalhe ? '<p class="detalhe">' + esc(t.detalhe) + '<span id="versao-atual"></span></p>' : '') + '</div>' + foto + '</div></div>';
 
     if (mostrar(c.vantagens)) {
       h += '<section><div class="faixa"><div class="vantagens">' + (c.vantagens.itens || []).map(function (v) {
@@ -95,4 +95,22 @@
   var doPainel = HOST.indexOf('SUBDOMINIO') >= 0 ? Promise.reject(0)
     : fetch(HOST + '/api/site', { cache: 'no-cache' }).then(function (r) { if (!r.ok) throw 0; return r.json(); });
   doPainel.catch(doArquivo).then(montar).catch(function () { /* fica o HTML que já está na página */ });
+})();
+
+// Versão que o botão Baixar entrega agora (a última publicada): o cliente confere que baixou a mais nova
+(function () {
+  if (!window.fetch) return;
+  // (o conteúdo do painel pode redesenhar o topo depois: escreve de novo por alguns segundos)
+  function escrever(texto) {
+    var vezes = 0;
+    var t = setInterval(function () { var e = document.getElementById('versao-atual'); if (e) e.textContent = texto; if (++vezes > 10) clearInterval(t); }, 500);
+  }
+  fetch('https://api.github.com/repos/tago5500/playbridge/releases/latest', { cache: 'no-store' })
+    .then(function (r) { return r.ok ? r.json() : null; })
+    .then(function (d) {
+      if (!d || !d.tag_name) return;
+      var data = d.published_at ? new Date(d.published_at).toLocaleDateString('pt-BR') : '';
+      escrever(' · versão ' + d.tag_name.replace(/^v/, '') + (data ? ' (de ' + data + ')' : ''));
+    })
+    .catch(function () {});
 })();
